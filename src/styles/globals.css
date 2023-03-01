@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* https://play.tailwindcss.com/NVUHzqMBl5?file=css */
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  .cursor-newtab {
+    cursor: url("/newtab-cursor.png") 10 10, pointer;
+  }
+
+  /* #region  /**=========== Typography =========== */
+  h1 {
+    @apply font-primary text-2xl font-bold md:text-4xl;
+  }
+
+  h2 {
+    @apply font-primary text-xl font-bold md:text-3xl;
+  }
+
+  h3 {
+    @apply font-primary text-lg font-bold md:text-2xl;
+  }
+
+  h4 {
+    @apply font-primary text-base font-bold md:text-lg;
+  }
+
+  body {
+    @apply font-secondary text-sm text-errieblack-600 dark:text-errieblack-50 md:text-base;
+    @apply scrollbar bg-charcoal-50 dark:bg-charcoal-600;
+  }
+
+  .layout-container {
+    @apply mx-auto max-w-4xl px-4 pt-20 pb-8 lg:px-2;
+  }
+
+  .link-underline {
+    @apply underline decoration-dotted underline-offset-2 hover:no-underline;
+    @apply transition duration-100 ease-linear;
+    @apply hover:rounded-md hover:bg-primary-500 hover:text-errieblack-50 dark:hover:text-errieblack-800;
+  }
+
+  [data-fade] {
+    @apply translate-y-10 opacity-0 transition duration-300 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100;
+  }
+  .fade-start [data-fade] {
+    @apply translate-y-0 opacity-100;
+  }
+  .fade-start [data-fade="1"] {
+    @apply delay-150;
+  }
+  .fade-start [data-fade="2"] {
+    @apply delay-300;
+  }
+  .fade-start [data-fade="3"] {
+    @apply delay-500;
+  }
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply h-4 w-4;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    @apply bg-gainsboro-200 dark:bg-gainsboro-700;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 100vh;
+    @apply border border-zinc-200 bg-zinc-400 dark:bg-zinc-600;
+    @apply hover:bg-slate-400;
+  }
+}
